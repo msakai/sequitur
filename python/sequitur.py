@@ -84,13 +84,13 @@ class Symbol:
     return sym
 
   def join(self, left, right):
-    if left.n <> None:
+    if left.n != None:
       left.delete_digram()
-      if (right.p <> None and right.n <> None and
+      if (right.p != None and right.n != None and
           right.value == right.p.value and
           right.value == right.n.value):
         digrams[str(right.value) + str(right.n.value)] = right
-      if (left.p <> None and left.n <> None and
+      if (left.p != None and left.n != None and
           left.value == left.p.value and
           left.value == left.n.value):
         digrams[str(left.p.value) + str(left.value)] = left.p
@@ -127,7 +127,7 @@ class Symbol:
       return False
 
     found = digrams[self.digram()]
-    if found.n <> self:
+    if found.n != self:
       self.match(self, found)
     return True
 
